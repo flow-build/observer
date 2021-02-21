@@ -4,7 +4,7 @@ const {
   formatError: {
     formatErrorToController,
   },
-} = require('../../domain/exceptions');
+} = require('../exceptions');
 
 function ActorController({
   cryptoService,

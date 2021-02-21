@@ -1,7 +1,7 @@
 const {
   DependencyNotFoundException,
   DatabaseException,
-} = require('../../domain/exceptions');
+} = require('../exceptions');
 
 function userRepository({
   instanceService,

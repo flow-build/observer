@@ -2,7 +2,7 @@ const Router = require('koa-router');
 const bodyParser = require('koa-bodyparser');
 const {
   notImplementedMiddleware,
-} = require('../../domain/middlewares');
+} = require('../middlewares');
 
 function generateRouter() {
   const router = new Router();

@@ -2,13 +2,20 @@
 const {
   DependencyNotFoundException,
   DatabaseException,
-} = require('../../domain/exceptions');
+} = require('../exceptions');
 
 function activityRepository({
   instanceService,
   loggerService: logger,
 }) {
-  const trx = instanceService.db;
+  if (!instanceService) {
+    throw new DependencyNotFoundException('instance Service');
+  }
+  if (!logger) {
+    throw new DependencyNotFoundException('logger Service');
+  }
+  const { db: trx } = instanceService;
+
   async function getActivityManagersByActorId({ actorId, status }) {
     try {
       const activityManager = await trx.select('*')

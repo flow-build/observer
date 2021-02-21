@@ -3,7 +3,7 @@ const {
   formatError: {
     formatErrorToController,
   },
-} = require('../../domain/exceptions');
+} = require('../exceptions');
 
 function authorizationMiddleware({
   loggerService: logger,

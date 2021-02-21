@@ -4,4 +4,3 @@ module.exports.notImplementedMiddleware = require('./notImplementedMiddleware');
 module.exports.notAllowedMiddleware = require('./notAllowedMiddleware');
 module.exports.decryptTokenMiddleware = require('./decryptTokenMiddleware');
 module.exports.authorizationMiddleware = require('./authorizationMiddleware');
-module.exports.authenticationMiddleware = require('./authenticationMiddleware');

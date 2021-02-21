@@ -2,7 +2,7 @@ const {
   formatError: {
     formatErrorToController,
   },
-} = require('../../domain/exceptions');
+} = require('../exceptions');
 
 function ActivityController({
   activityValidator: validator,

@@ -1,9 +1,18 @@
-const { DatabaseException } = require('../../domain/exceptions');
+const {
+  DependencyNotFoundException,
+  DatabaseException,
+} = require('../exceptions');
 
 function workflowRepository({
   instanceService,
   loggerService: logger,
 }) {
+  if (!instanceService) {
+    throw new DependencyNotFoundException('instance Service');
+  }
+  if (!logger) {
+    throw new DependencyNotFoundException('logger Service');
+  }
   const trx = instanceService.db;
   const { cockpit } = instanceService;
 
