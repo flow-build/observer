@@ -1,5 +1,4 @@
 const awilix = require('awilix');
-const path = require('path');
 
 function loadModules(container, basePath) {
   container.loadModules([
@@ -48,10 +47,7 @@ function setup(options) {
 
   setupContainerValues(container, options);
 
-  const domainPath = path.resolve(__dirname, '..', 'domain');
-  // load domain modules
-  loadModules(container, domainPath);
-  // lload observer modules
+  // oad observer modules
   loadModules(container, __dirname);
   return container;
 }
