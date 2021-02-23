@@ -1,7 +1,7 @@
 {
-    "name": "@flowbuild/cockpit-api",
+    "name": "@flowbuild/observer-api",
     "version": "0.0.1",
-    "description": "flowbuild cockpit api",
+    "description": "flowbuild observer api",
     "main": "index.js",
     "scripts": {
         "test": "jest --coverage  --runInBand  --detectOpenHandles ",
