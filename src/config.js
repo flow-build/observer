@@ -7,8 +7,8 @@ const cryptoOptions = {
 const instanceOptions = {
   engineCryptoKey: process.env.ENGINE_CRYPTO_KEY
   || '31490127699897466090652308592916',
-  databaseConnectionString: process.env.DATABASE_CONNECTION_STRING
-    || 'postgresql://flowbuild-workflow:123456@localhost:5432/workflow-db',
+  databaseConnectionString: process.env.DATABASE_CONNECTION_STRING + '/flowbuild_workflow'
+    || 'postgresql://flowbuild-dev:123456@localhost:5432/flowbuild_workflow',
   persistMode: process.env.PERSIST_MODE || 'knex',
   missionControlSecretKey: process.env.MISSION_CONTROL_SECRET_KEY
   || '123456',
