@@ -14,6 +14,10 @@ function authorizationMiddleware({
     const { authorization } = ctx.request.headers;
 
     const key = authorization.split('=')[1];
+    console.log({
+      key,
+      missionControlSecretKey
+    })
     if (key !== missionControlSecretKey) {
       const err = new AuthorizationException('invalid secret key on headers');
       formatErrorToController(ctx, err, logger);

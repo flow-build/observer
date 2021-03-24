@@ -73,8 +73,8 @@ function workflowValidator({
     }, dto);
 
     if (validationError) {
-      logger.debug(`error on get post workflow validation:
-        ${JSON.stringify(validationError.errors)}`);
+      // logger.debug(`error on get post workflow validation:
+      //   ${JSON.stringify(validationError.errors)}`);
       throw new ValidationException('post Workflow', validationError.errors);
     }
   }

@@ -7,11 +7,9 @@ function generateRouter(container, nested = false) {
   // const flags = container.resolve('featureFlags');
   // const { jwtSecret } = container.resolve('webOptions');
 
-  // const decryptTokenMiddleware = container.resolve('decryptTokenMiddleware');
   // const validateActorMiddleware = container.resolve('validateActorMiddleware');
   // if (!nested && flags.nestedEndpoints) {
   //   router.use(jwt({ secret: jwtSecret }))
-  //     .use(decryptTokenMiddleware)
   //     .use(validateActorMiddleware);
   // }
   const controller = container.resolve('activityController');

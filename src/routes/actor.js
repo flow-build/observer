@@ -12,12 +12,10 @@ function generateRouter(container) {
   const { jwtSecret } = container.resolve('webOptions');
 
   const controller = container.resolve('actorController');
-  // const decryptTokenMiddleware = container.resolve('decryptTokenMiddleware');
   // const validateActorMiddleware = container.resolve('validateActorMiddleware');
   // router
   //   .get('/',
   //     jwt({ secret: jwtSecret }),
-  //     decryptTokenMiddleware,
   //     validateActorMiddleware,
   //     controller.getActorData)
   //   .get('/:id', controller.getActorId)

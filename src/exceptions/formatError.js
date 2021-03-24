@@ -4,9 +4,8 @@ function formatErrorToController(ctx, exception, logger) {
   if (exception instanceof BaseError) {
     ctx.body = {
       error: {
-        type: exception.type,
-        code: exception.code,
         message: exception.message,
+        ...exception,
       },
     };
     ctx.status = exception.code;

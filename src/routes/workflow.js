@@ -13,7 +13,6 @@ function generateRouter(container, nested = false) {
   // router.use(authorizationMiddleware);
   // if (!nested && flags.nestedEndpoints) {
   //   router.use(jwt({ secret: jwtSecret }))
-  //     .use(decryptTokenMiddleware)
   //     .use(validateActorMiddleware);
   // }
   const controller = container.resolve('workflowController');

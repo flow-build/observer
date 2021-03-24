@@ -67,8 +67,9 @@ function workflowController({
 
       await next();
     } catch (err) {
-      formatErrorToController(ctx, err, logger);
       logger.error('get workflow by id failed', err);
+      formatErrorToController(ctx, err, logger);
+      console.log({ body: ctx.body, err });
     }
   }
   return {
