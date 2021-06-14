@@ -9,6 +9,8 @@ on:
       - ready_for_review
       - reopened
       - unlabeled
+      - unlocked
+      - synchronize
 
 jobs:
   pattern-labaler:
