@@ -1,6 +1,6 @@
 {
     "name": "@flowbuild/observer-api",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "description": "flowbuild observer api",
     "main": "lib.js",
     "scripts": {
