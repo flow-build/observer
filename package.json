@@ -2,13 +2,13 @@
     "name": "@flowbuild/observer-api",
     "version": "0.0.1",
     "description": "flowbuild observer api",
-    "main": "index.js",
+    "main": "lib.js",
     "scripts": {
         "test": "jest --coverage  --runInBand  --detectOpenHandles ",
         "test:watch": "jest --watch --coverage --runInBand --detectOpenHandles",
-        "start": "node src/index.js",
+        "start": "node src/server.js",
         "lint": "eslint --fix --ext .js ./src",
-        "watch": "env nodemon --inspect=0.0.0.0 src/index.js"
+        "watch": "env nodemon --inspect=0.0.0.0 server.js"
     },
     "devDependencies": {
         "eslint": "^6.8.0",
@@ -36,7 +36,6 @@
         "koa-jwt": "^3.6.0",
         "koa-router": "^8.0.8",
         "koa2-cors": "^2.0.6",
-        "newrelic": "^6.9.0",
         "uuid": "^3.4.0"
     },
     "author": "FDTE-DSD",

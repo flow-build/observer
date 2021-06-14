@@ -5,33 +5,17 @@ const http2Server = require('http2');
 
 const setupDependencyInjection = require('./diConfiguration');
 const setupWebConfiguration = require('./webConfiguration');
+const settings = require('./settings');
 
-const defaultInstanceOptions = () => ({
-  engineCryptoKey: undefined,
-  databaseConnectionString: undefined,
-  persistMode: 'knex',
-});
+const defaultInstanceOptions = () => (settings.instanceOptions);
 
-const defaultLoggerOptions = () => ({
-  logLevel: 'DEBUG',
-});
+const defaultLoggerOptions = () => (settings.loggerOptions);
 
-const defaultFeatureFlags = () => ({
-  activityManagerCacheable: true,
-  processCacheable: false,
-  nestedEndpoints: true,
-});
+const defaultFeatureFlags = () => (settings.featureFlags);
 
-const defaultWebOptions = () => ({
-  jwtSecret: '1234',
-  port: 3000,
-  http2Settings: undefined,
-});
+const defaultWebOptions = () => (settings.webOptions);
 
-const defaultCryptoOptions = () => ({
-  cryptoKey: undefined,
-  cryptoIV: undefined,
-});
+const defaultCryptoOptions = () => (settings.cryptoOptions);
 
 const defaultStartCallback = () => ((err) => {
   if (err) {

@@ -9,23 +9,12 @@ const workflowRouter = require('./workflow');
 function generateRouter(container) {
   const router = new Router();
 
-  const { jwtSecret } = container.resolve('webOptions');
-
   const controller = container.resolve('actorController');
-  // const validateActorMiddleware = container.resolve('validateActorMiddleware');
-  // router
-  //   .get('/',
-  //     jwt({ secret: jwtSecret }),
-  //     validateActorMiddleware,
-  //     controller.getActorData)
-  //   .get('/:id', controller.getActorId)
-  //   .post('/', bodyParser(), controller.incorporateUser);
-
   const flags = container.resolve('featureFlags');
   if (flags.nestedEndpoints) {
-    const pRouter = processRouter(container, true);
-    const aRouter = activityRouter(container, true);
-    const wRouter = workflowRouter(container, true);
+    const pRouter = processRouter(container);
+    const aRouter = activityRouter(container);
+    const wRouter = workflowRouter(container);
     router.use(
       '/:id/processes',
       controller.getActorId,

@@ -2,19 +2,9 @@ const Router = require('koa-router');
 const jwt = require('koa-jwt');
 const bodyParser = require('koa-bodyparser');
 
-function generateRouter(container, nested = false) {
+function generateRouter(container) {
   const router = new Router();
 
-  // const flags = container.resolve('featureFlags');
-  // const { jwtSecret } = container.resolve('webOptions');
-
-  // const authorizationMiddleware = container.resolve('authorizationMiddleware');
-  // const validateActorMiddleware = container.resolve('validateActorMiddleware');
-  // router.use(authorizationMiddleware);
-  // if (!nested && flags.nestedEndpoints) {
-  //   router.use(jwt({ secret: jwtSecret }))
-  //     .use(validateActorMiddleware);
-  // }
   const controller = container.resolve('workflowController');
   router.get('/',
     controller.getWorkflows)

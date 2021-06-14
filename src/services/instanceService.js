@@ -12,15 +12,18 @@ class InstanceService {
       databaseConnectionString,
       engineCryptoKey,
     } = instanceOptions;
-    if (persistMode === 'knex'
-      && !databaseConnectionString) {
-      throw new Error('database Settings not Setted');
+    if (persistMode === 'knex') {
+      if (!databaseConnectionString) {
+        throw new Error('database Settings not Setted');
+      }
+      this.db = Knex(databaseConnectionString);
+    } else {
+      this.db = null;
     }
+
     if (!engineCryptoKey) {
       throw new Error('cockpit cryptoKey not Setted');
     }
-
-    this.db = Knex(databaseConnectionString);
     this.cockpit = new Cockpit(persistMode, this.db);
     Engine.kill();
   }

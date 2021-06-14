@@ -13,7 +13,7 @@ function ActorController({
 }) {
   const { jwtSecret } = webOptions;
 
-  async function incorporateUser(ctx, next) {
+  async function copilotUser(ctx, next) {
     try {
       const actor = ctx.request.body;
 
@@ -73,7 +73,7 @@ function ActorController({
   return {
     getActorId,
     getActorData,
-    incorporateUser,
+    copilotUser,
   };
 }
 module.exports = ActorController;

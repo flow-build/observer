@@ -1,17 +1,13 @@
-/* eslint-disable max-len */
 const cryptoOptions = {
-  cryptoIV: process.env.JWT_ENCRYPT_IV || '18c4685fd4a5fd13',
-  cryptoKey: process.env.JWT_ENCRYPT_KEY || '0479b527934715539e584f45677ab193',
+  cryptoIV: process.env.JWT_ENCRYPT_IV,
+  cryptoKey: process.env.JWT_ENCRYPT_KEY,
 };
 
 const instanceOptions = {
-  engineCryptoKey: process.env.ENGINE_CRYPTO_KEY
-  || '31490127699897466090652308592916',
-  databaseConnectionString: `${process.env.DATABASE_CONNECTION_STRING}/flowbuild_workflow`
-    || 'postgresql://flowbuild-dev:123456@localhost:5432/flowbuild_workflow',
+  engineCryptoKey: process.env.ENGINE_CRYPTO_KEY,
+  databaseConnectionString: process.env.WORKFLOW_DATABASE_CONNECTION_STRING,
   persistMode: process.env.PERSIST_MODE || 'knex',
-  missionControlSecretKey: process.env.FLOWBUILD_SECRET_KEY
-  || '123456',
+  missionControlSecretKey: process.env.FLOWBUILD_SECRET_KEY,
 };
 
 const loggerOptions = {

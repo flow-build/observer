@@ -1,11 +1,11 @@
-/* eslint-disable no-console */
-const createServer = require('./startup');
-const options = require('./config');
+const configServices = require('./diConfiguration');
+const configRoutes = require('./webConfiguration');
+const settings = require('./settings');
+const startup = require('./startup');
 
-createServer(options, (err) => {
-  if (err) {
-    console.error(err);
-    process.exit(1);
-  }
-  console.log('cockpit-api started sucessfully');
-});
+module.exports = {
+  settings,
+  configRoutes,
+  configServices,
+  startup,
+};

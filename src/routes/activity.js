@@ -1,17 +1,9 @@
 const Router = require('koa-router');
 const jwt = require('koa-jwt');
 
-function generateRouter(container, nested = false) {
+function generateRouter(container) {
   const router = new Router();
 
-  // const flags = container.resolve('featureFlags');
-  // const { jwtSecret } = container.resolve('webOptions');
-
-  // const validateActorMiddleware = container.resolve('validateActorMiddleware');
-  // if (!nested && flags.nestedEndpoints) {
-  //   router.use(jwt({ secret: jwtSecret }))
-  //     .use(validateActorMiddleware);
-  // }
   const controller = container.resolve('activityController');
 
   router.get('/',
